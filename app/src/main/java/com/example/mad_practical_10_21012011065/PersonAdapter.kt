@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class PersonAdapter(context: Context,val Personarray : ArrayList<Person>): ArrayAdapter<Person>(context,0,Personarray) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -17,7 +18,7 @@ class PersonAdapter(context: Context,val Personarray : ArrayList<Person>): Array
         view.findViewById<TextView>(R.id.email_textView).text=Personarray[position].emailId
         view.findViewById<TextView>(R.id.address_textView).text=Personarray[position].address
         view.findViewById<MaterialButton>(R.id.location_btn).setOnClickListener {
-            Intent(context,MapsActivity::class.java).putExtra("object",Personarray[position]).apply { context.startActivity(this) }
+            Intent(context,MapsActivity::class.java).putExtra("Object",Personarray[position]).apply { context.startActivity(this) }
         }
         return view
     }

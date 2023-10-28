@@ -22,7 +22,6 @@
             android:layout_height="match_parent"
             android:padding="20dp">
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/person_btn"
                 style="?materialIconButtonFilledStyle"
@@ -83,7 +82,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginEnd="15dp"
-                android:backgroundTint="#0000ff"
+                android:backgroundTint="#2D2DCF"
                 android:drawableTint="@color/white"
                 style="?materialIconButtonFilledStyle"
                 app:icon="@drawable/baseline_location_on_24"
