@@ -1,5 +1,6 @@
 package com.example.mad_practical_10_21012011065
 
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
@@ -13,10 +14,12 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var personListView : ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<FloatingActionButton>(R.id.floatingBt).setOnClickListener {
+        val btn= findViewById<FloatingActionButton>(R.id.autorenew_btn)
+        btn.setOnClickListener(){
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val data = HttpRequest().makeServiceCall(
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 val person = Person(jsonObject)
                 personList.add(person)
             }
-            val personListView=findViewById<ListView>(R.id.listView1)
+            val personListView=findViewById<ListView>(R.id.listview_main)
             personListView.adapter = PersonAdapter(this, personList)
         } catch (ee: JSONException) {
             ee.printStackTrace()

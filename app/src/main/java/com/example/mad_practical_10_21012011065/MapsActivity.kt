@@ -1,5 +1,4 @@
 package com.example.mad_practical_10_21012011065
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -49,7 +48,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(sydney)
             .title(title)
             .snippet(title)
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_image))
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.map_img))
         )
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,16.0f))
     }
